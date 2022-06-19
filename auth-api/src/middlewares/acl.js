@@ -1,9 +1,13 @@
 "use strict";
 
-module.exports =(capability)=>{
+module.exports =(action)=>{
+    // console.log(capability);
     return(req,res,next)=>{
     try{
-        if(req.user.actions.includes(capability)){
+        // console.log("jjjjjjjjj", cab);
+
+        if(req.user.actions.includes(action)){
+                // console.log("hhhhhh");
             next();
         }
         else{
