@@ -2,7 +2,6 @@
 const express = require('express');
 const secretRouter=express.Router();
 const bearer=require('../middlewares/bearer');
-const logger=require("../middlewares/logger");
 
 secretRouter.get('/secret',bearer,(req,res)=>{
     res.status(200).json({
@@ -10,6 +9,5 @@ secretRouter.get('/secret',bearer,(req,res)=>{
         'user': req.user
     });})
 
-    secretRouter.use(logger);
-
+   
 module.exports=secretRouter;
